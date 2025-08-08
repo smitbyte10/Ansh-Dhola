@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: hsl(134, 82%, 45%);
+}
+
+body::before {
+    content: 'Ansh Dhola';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 15vw;
+    color: rgba(208, 196, 199, 0.903);
+    transform: translate(-50%, -50%);
+    letter-spacing: 10px;
+    z-index: 0;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.05), 0 0 50px rgba(255, 255, 255, 0.05);
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+}
+
+#container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.ball {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #ea0c0c, #e10837);
+    box-shadow: 0 0 20px #ff00cc, 0 0 40px #3333ff, 0 0 80px #ffffff44, inset 0 0 20px #ffffff55;
+    transition: transform 0.1s ease;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.floor {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+@keyframes stars {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1000px 1000px;
+    }
+}
+
+body {
+    background: radial-gradient(ellipse at center, #0e0e2c 0%, #000000 100%);
+    background-size: cover;
+    animation: stars 60s linear infinite;
+}
